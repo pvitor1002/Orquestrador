@@ -46,7 +46,7 @@ public class IntegrationFlowDefinitions {
     @Bean
     public IntegrationFlow restFiltererFlow() {
         return IntegrationFlows.from(GatewayChannels.LATERAL)
-                .handle(Http.outboundGateway("http://localhost:8080/response")
+                .handle(Http.outboundGateway("http://localhost:8082/response")
                         .httpMethod(HttpMethod.POST)
                         .mappedRequestHeaders("replyChannel")
                         .headerMapper(headerMapper())

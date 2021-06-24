@@ -26,12 +26,12 @@ spring:
                   serializer: org.springframework.kafka.support.serializer.JsonSerializer
       bindings:
         reply:
-          destination: responseX
-          group: responseGroup
+          destination: transferencia-finalizada
+          group: orquestrador
           consumer:
             partitioned: false
         request:
-          destination: requestX
+          destination: comando-processar
           producer:
             partition-count: 4
 logging:

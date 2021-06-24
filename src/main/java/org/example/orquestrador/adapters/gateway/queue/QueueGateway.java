@@ -12,7 +12,7 @@ import org.springframework.messaging.handler.annotation.Payload;
 public interface QueueGateway {
 
     @Gateway(requestChannel = IntegrationFlowDefinitions.HANDLER_FLOW, replyChannel = GatewayChannels.RESPONSE, replyTimeout = 8000)
-    byte[] handle(@Payload Request payload);
+    String handle(@Payload Request payload);
 
     @Gateway(requestChannel = GatewayChannels.RESPONSE)
     void comunicacaoLateral(@Payload Message<byte[]> payload);
